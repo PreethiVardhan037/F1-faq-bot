@@ -2,7 +2,7 @@
 
 Ask it anything. It only answers what you tell it to.
 
-FAQBot is a smart FAQ assistant built on Azure OpenAI. Give it a system prompt, define its scope, and it answers questions within that context only. Built for the Azure AI Bootcamp — Session 5.
+FAQBot is a smart FAQ assistant built on Azure OpenAI. Give it a system prompt, define its scope, and it answers questions within that context only. 
 
 ---
 
