@@ -26,15 +26,7 @@ const corsOptions = {
   }
 };
 
-app.use(cors({
-    origin: function(origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    }
-}));
+app.use(cors(corsOptions));
 
 // Serve frontend
 app.use(express.static(path.join(__dirname, '../public')));
