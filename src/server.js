@@ -12,10 +12,19 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // CORS
-const allowedOrigins = [
-    'http://localhost:3000',
-    process.env.ALLOWED_ORIGIN
-].filter(Boolean);
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (
+      !origin ||
+      origin === "http://localhost:3000" ||
+      origin.endsWith(".vercel.app")
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+};
 
 app.use(cors({
     origin: function(origin, callback) {
